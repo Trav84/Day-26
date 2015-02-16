@@ -35,7 +35,20 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 		}
 		$scope.showOrNot = !$scope.showOrNot;
 		console.log($scope.showOrNot);
-	}
+	};
 
+}).controller('likeButtonCtrl', function($scope) {
+
+	$scope.count = 0;
+	$scope.like = 'Likes';
+
+	$scope.onClick = function() {
+		$scope.count++;
+		if($scope.count === 1) {
+			$scope.like = 'Like';
+		} else {
+			$scope.like = 'Likes';
+		}
+	};
 });
 
