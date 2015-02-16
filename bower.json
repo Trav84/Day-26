@@ -1,0 +1,19 @@
+{
+  "name": "Day-26",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Trav84/Day-26",
+  "authors": [
+    "Travis Czerw <travis.czerw@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13"
+  }
+}
