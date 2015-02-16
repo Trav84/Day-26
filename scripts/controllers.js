@@ -9,8 +9,8 @@ angular.module('app.controllers', [])
 		$scope.disableButton = true;
 		$scope.buttonText = $scope.isLoading;
 		$timeout(function(){ 
-			$scope.disableButton = false
-			$scope.buttonText = "Submit" }, 2000);
-	}
+			$scope.disableButton = false;
+			$scope.buttonText = "Submit"; }, 2000);
+	};
 
 });
