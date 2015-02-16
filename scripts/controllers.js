@@ -1,5 +1,4 @@
-angular.module('app.controllers', [])
-.controller('buttonController', function($scope, $timeout) {
+angular.module('app.controllers', []).controller('buttonController', function($scope, $timeout) {
 
 	$scope.buttonText = "Submit";
 	$scope.isLoading = "Loading...";
@@ -13,4 +12,30 @@ angular.module('app.controllers', [])
 			$scope.buttonText = "Submit"; }, 2000);
 	};
 
+}).controller('tabController', function($scope) {
+
+	$scope.showOrNot = true;
+
+	$scope.onClick = function(tabNum) {
+		console.log('click');
+		if(tabNum === 1) {
+			$scope.show1 = !$scope.show1;
+			$scope.show2 = false;
+			$scope.show3 = false;
+		} 
+		else if(tabNum === 2) {
+			$scope.show2 = !$scope.show2;
+			$scope.show1 = false;
+			$scope.show3 = false;
+		}
+		else {
+			$scope.show3 = !$scope.show3;
+			$scope.show2 = false;
+			$scope.show1 = false;
+		}
+		$scope.showOrNot = !$scope.showOrNot;
+		console.log($scope.showOrNot);
+	}
+
 });
+

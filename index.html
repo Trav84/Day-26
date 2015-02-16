@@ -2,14 +2,21 @@
 
 <html>
 	<head>
-
+	<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
-
 
 	<body ng-app="app">
 
-		<button ng-controller="buttonController" ng-click="onClick()" ng-bind="buttonText" ng-disabled="disableButton">  </button>
+		<button ng-controller="buttonController" ng-click="onClick()" ng-bind="buttonText" ng-disabled="disableButton">  </button> </br>
 
+		<div ng-controller="tabController">
+			<div ng-click="onClick(1)" class="tab"> Tab 1 </div>
+			<div ng-click="onClick(2)" class="tab"> Tab 2 </div>
+			<div ng-click="onClick(3)" class="tab"> Tab 3 </div>
+			<p ng-show="show1"> Hello I'm page 1. You are now looking at the first tab. </p>
+			<p ng-show="show2"> Hello I'm page 2. You are now looking a the second tab. </p>
+			<p ng-show="show3"> Hello I'm page 3. You are not looking a the third tab. </p>
+		</div>
 
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="scripts/controllers.js"></script>
