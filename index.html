@@ -2,13 +2,25 @@
 
 <html>
 	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	</head>
 
 	<body ng-app="app">
 
-		<button ng-controller="buttonController" ng-click="onClick()" ng-bind="buttonText" ng-disabled="disableButton">  </button> </br>
+	<div class="container-fluid">
+	<div class="page-header">
+ 		<h1>Day-26 Homework <small>Angular</small></h1>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<button ng-controller="buttonController" ng-click="onClick()" ng-bind="buttonText" ng-disabled="disableButton">  </button> </br>
+		</div>
+	</div>
 
+	<div class="row">
+		<div class="col-md-10">
 		<div ng-controller="tabController">
 			<div ng-class="{selected: deleted}" ng-model="selected" ng-click="onClick(1)" class="tab"> Tab 1 </div>
 			<div ng-click="onClick(2)" class="tab"> Tab 2 </div>
@@ -17,18 +29,32 @@
 			<p ng-show="show2"> Hello I'm page 2. You are now looking a the second tab. </p>
 			<p ng-show="show3"> Hello I'm page 3. You are not looking a the third tab. </p>
 		</div>
+		</div>
+	</div>
 
-		<button ng-controller="likeButtonCtrl" ng-click="onClick()" ng-model="count"> {{count}} {{like}} </button>
+	<div class="row">
+		<div class="col-md-10">
 
-		<form ng-controller="loginController" ng-submit="submit()">
-			<input ng-model="email" type="email" placeholder="Enter your email">
-			<input ng-model="pass" type="password" placeholder="Enter your password">
-			<button> Submit </button> </br>
-			<span ng-model="errorTxt1"> {{ errorTxt1 }} </span> </br>
-			<span ng-model="errorTxt2"> {{ errorTxt2 }} </span> </br>
-			<span ng-model="errorTxt3"> {{ errorTxt3 }} </span> </br>
-			<span ng-model="errorTxt4"> {{ errorTxt4 }} </span> </br>
-		</form>
+		<button ng-controller="likeButtonCtrl" ng-click="onClick()" ng-model="count"> <span class="badge">{{count}} </span> {{like}} 
+		</button>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10">
+			<form ng-controller="loginController" ng-submit="submit()">
+				<input ng-model="email" type="email" placeholder="Enter your email">
+				<input ng-model="pass" type="password" placeholder="Enter your password">
+				<button> Submit </button> </br>
+				<span class="label label-warning" ng-model="errorTxt1"> {{ errorTxt1 }} </span> </br>
+				<span class="label label-warning" ng-model="errorTxt2"> {{ errorTxt2 }} </span> </br>
+				<span class="label label-danger" ng-model="errorTxt3"> {{ errorTxt3 }} </span> </br>
+				<span class="label label-danger" ng-model="errorTxt4"> {{ errorTxt4 }} </span> </br>
+			</form>
+		</div>
+		</div>
+	</div>
 
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="scripts/controllers.js"></script>
