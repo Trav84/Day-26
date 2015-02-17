@@ -57,32 +57,43 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 
 	$scope.submit = function() {
 
-		if($scope.email == '') {
+	console.log($scope.pass);
+	console.log($scope.email);
+
+		if(angular.isUndefined($scope.email)) {
 			console.log('missing email');
-			$scope.errorTxt = "Please enter an email before logging in.";
+			$scope.errorTxt1 = "Please enter an email before logging in.";
 		}  
-		if(!angular.isDefined($scope.pass)) {
+		if(angular.isUndefined($scope.pass)) {
 			console.log('missing password');
-			$scope.errorTxt = "Please enter a password before logging in.";
+			$scope.errorTxt2 = "Please enter a password before logging in.";
 		}
 		switch($scope.pass) {
 			case 'password123':
 			case 'pandas':
 			case 'honeycrisp':
-				correctEmail = true;
+				correctPass = true;
 				break;
 			default:
-				correctEmail = false;
+				correctPass = false;
+		}
+
+		if(correctPass === false) {
+			$scope.errorTxt3 = "The password you entered was incorrect.";
 		}
 
 		switch($scope.email) {
 			case 'aaron@theironyard.com':
 			case 'admin@google.com':
 			case 'travis.czerw@gmail.com':
-				correctPass = true;
+				correctEmail = true;
 				break;
 			default:
-				correctPass = false;
+				correctEmail = false;
+		}
+
+		if(correctEmail === false) {
+			$scope.errorTxt4 = "Your user was not found.";
 		}
 
 		if(correctEmail === true && correctPass === true) {
