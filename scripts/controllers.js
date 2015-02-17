@@ -63,10 +63,14 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 		if(angular.isUndefined($scope.email)) {
 			console.log('missing email');
 			$scope.errorTxt1 = "Please enter an email before logging in.";
-		}  
+		}  else {
+			$scope.errorTxt1 = "";
+		}
 		if(angular.isUndefined($scope.pass)) {
 			console.log('missing password');
 			$scope.errorTxt2 = "Please enter a password before logging in.";
+		} else {
+			$scope.errorTxt2 = "";
 		}
 		switch($scope.pass) {
 			case 'password123':
@@ -80,6 +84,8 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 
 		if(correctPass === false) {
 			$scope.errorTxt3 = "The password you entered was incorrect.";
+		} else {
+			$scope.errorTxt3 = "";
 		}
 
 		switch($scope.email) {
@@ -94,6 +100,8 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 
 		if(correctEmail === false) {
 			$scope.errorTxt4 = "Your user was not found.";
+		} else {
+			$scope.errorTxt4 = "";
 		}
 
 		if(correctEmail === true && correctPass === true) {
