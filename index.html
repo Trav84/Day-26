@@ -20,6 +20,13 @@
 
 		<button ng-controller="likeButtonCtrl" ng-click="onClick()" ng-model="count"> {{count}} {{like}} </button>
 
+		<form ng-controller="loginController" ng-submit="submit()">
+			<input ng-model="email" type="email" placeholder="Enter your email">
+			<input ng-model="pass" type="password" placeholder="Enter your password">
+			<button> Submit </button>
+			<span ng-model="errorTxt"> {{ errorTxt }} </span>
+		</form>
+
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script type="text/javascript" src="scripts/controllers.js"></script>
         <script type="text/javascript" src="scripts/app.js"></script>

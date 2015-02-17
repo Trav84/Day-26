@@ -50,5 +50,44 @@ angular.module('app.controllers', []).controller('buttonController', function($s
 			$scope.like = 'Likes';
 		}
 	};
+}).controller('loginController', function($scope, $window) {
+
+	var correctEmail = false;
+	var correctPass = false;
+
+	$scope.submit = function() {
+
+		if($scope.email == '') {
+			console.log('missing email');
+			$scope.errorTxt = "Please enter an email before logging in.";
+		}  
+		if(!angular.isDefined($scope.pass)) {
+			console.log('missing password');
+			$scope.errorTxt = "Please enter a password before logging in.";
+		}
+		switch($scope.pass) {
+			case 'password123':
+			case 'pandas':
+			case 'honeycrisp':
+				correctEmail = true;
+				break;
+			default:
+				correctEmail = false;
+		}
+
+		switch($scope.email) {
+			case 'aaron@theironyard.com':
+			case 'admin@google.com':
+			case 'travis.czerw@gmail.com':
+				correctPass = true;
+				break;
+			default:
+				correctPass = false;
+		}
+
+		if(correctEmail === true && correctPass === true) {
+			$window.location ="http://theironyard.com";
+		}
+	};		
 });
 
